@@ -1,0 +1,41 @@
+﻿@model Modal_Upload_ASP.Net_Core_5._0.Models.BlogAuthor
+
+@{ Layout = null; }
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create_Update" asp-route-id="@Model.BlogAuthorId" enctype="multipart/form-data" onsubmit="return jQueryAjaxPost(this);">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BlogAuthorId" />
+           
+           
+             
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Imagepath" class="control-label"></label>
+                        <img style="height:150px;" src="@Html.DisplayFor(model => model.Imagepath)" />
+                        <span asp-validation-for="Imagepath" class="text-danger"></span>
+                        <input asp-for="Imagepath" class="form-control" />
+                        <span asp-validation-for="Imagepath" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="BlogAuthorName" class="control-label"></label>
+                        <input asp-for="BlogAuthorName" class="form-control" />
+                        <span asp-validation-for="BlogAuthorName" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <input type="file" name="resim" />
+            <div class="form-group">
+                <div class="col-md-6 offset-md-3">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
